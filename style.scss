@@ -22,4 +22,141 @@ $border: .2rem solid $black;
     grid-template-columns: repeat(auto-fit, min-max($val, 1fr));
     gap: 2rem;
 }
+
+@mixin flex($align) {
+    display: flex;
+    align-items: $align;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+@mixin titleText($titleSize) {
+    font-size: $titleSize;
+    color: $black;
+    text-transform: capitalize;
+}
+
+@mixin graphText($graphSize) {
+    font-size: $graphSize;
+    color: $light-color;
+    line-height: 2;
+    padding: 1rem 0;
+}
+
+html {
+    font-size: 62.5%;
+    overflow: hidden;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+        width: 1rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $red;
+    }
+}
+
+body {
+    background: url(../images/bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    &.active {
+        padding-left: 0;
+    }
+}
+
+/* HEADER */
+.header {
+    position: fixed;
+    background: $red;
+    top: 0;
+    left: -31rem;
+    width: 30rem;
+    height: 100%;
+    padding: 2rem;
+    z-index: 1000;
+
+    &.active {
+        left: 0;
+    }
+
+    .logo {
+        font-size: 2.5rem;
+        color: $white;
+        font-weight: bold;
+    }
+
+    .navbar {
+        padding: 30% 0;
+
+        a {
+            display: block;
+            margin: 2rem 0;
+            font-size: 2rem;
+            color: $white;
+
+            &:hover {
+                text-decoration: underline;
+                text-underline-offset: .7rem;
+            }
+        }
+    }
+
+    .share {
+        text-align: center;
+
+        a {
+            height: 5rem;
+            width: 5rem;
+            line-height: 5rem;
+            font-size: 2rem;
+            color: $black;
+            background: $white;
+            margin: 0 .3rem;
+
+            &:hover {
+                background: $black;
+                color: $white;
+            }
+        }
+    }
+
+    .credit {
+        text-align: center;
+        font-size: 1.7rem;
+        color: $white;
+        margin-top: 3rem;
+        line-height: 1.5;
+    }    
+}
+
+#menu-btn {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    text-align: center;
+    background: $red;
+    color: $white;
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2.5rem;
+    cursor: pointer;
+    z-index: 1100;
+
+    &.fa-times {
+        top: 1rem;
+        left: 25rem;
+    }
+}
+
+
+
     
