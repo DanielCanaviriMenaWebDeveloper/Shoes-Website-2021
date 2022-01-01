@@ -44,7 +44,7 @@ $border: .2rem solid $black;
 }
 
 html {
-    font-size: 62.5%;
+    font-size: 62.5%; /* 1rem = 10px */
     overflow: hidden;
     scroll-behavior: smooth;
 
@@ -68,7 +68,31 @@ body {
     background-attachment: fixed;
 
     &.active {
-        padding-left: 0;
+        padding-left: 30rem;
+    }
+}
+
+section {
+    padding: 5rem 9%;
+}
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    border: $border;
+    border-radius: 5rem;
+    padding: 1.2rem 3rem;
+    cursor: pointer;
+    background: none;
+    color: $black;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .05rem;
+
+    &:hover {
+        border-color: $red;
+        color: $white;
+        background: $red;
     }
 }
 
@@ -157,6 +181,99 @@ body {
     }
 }
 
-
-
+/* BANNER */
+.banner {
+    @include flex(center);
     
+    .content {
+        flex: 1 1 41rem;
+
+        span {
+            font-size: 2.5rem;
+            color: $red;
+        }
+
+        h3 {
+            @include titleText(4rem);
+            padding-top: 1rem;
+        }
+
+        p {
+            padding: 1rem 0;
+            @include graphText(1.5rem)
+        }
+    }
+
+    .image {
+        flex: 1 1 41rem;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
+// Large devices (desktops, less than 1201px)
+// Dispositivos grandes (computadoras de escritorio, menos de 1201px)
+@media (max-width: 1200px) {
+
+    body.active {
+        padding-left: 0;
+    }
+
+    header.active {
+        box-shadow: 0 0 0 100vh rgba(0, 0, 0, .8);
+    }
+
+}
+
+// Medium devices (tablets, less than 992px)
+/* Dispositivos medianos (tabletas, menos de 992px) */
+@media (max-width: 991px) {
+    
+    html {
+        font-size: 55%; /* 1rem = 8.8px */
+    }
+
+    section {
+        padding: 3rem 2rem;
+    }
+
+}
+
+// X-Small devices (portrait phones, less than 450px)
+// Dispositivos Extra Pequeños (teléfonos verticales, menos de 451 px)
+@media (max-width: 450px) {
+
+    html {
+        font-size: 50%; /* 1rem = 8px */
+    }
+
+}
+
