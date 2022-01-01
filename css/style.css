@@ -15,7 +15,7 @@
 html {
   font-size: 62.5%;
   /* 1rem = 10px */
-  overflow: hidden;
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -46,6 +46,18 @@ section {
   padding: 5rem 9%;
 }
 
+.heading {
+  text-align: center;
+  font-size: 4rem;
+  color: #444;
+  text-transform: capitalize;
+  margin-bottom: 3rem;
+}
+
+.heading span {
+  color: #ed2d34;
+}
+
 .btn {
   margin-top: 1rem;
   display: inline-block;
@@ -56,8 +68,8 @@ section {
   background: none;
   color: #444;
   font-size: 2rem;
-  text-transform: uppercase;
-  letter-spacing: .05rem;
+  text-transform: capitalize;
+  /* letter-spacing: .05rem; */
 }
 
 .btn:hover {
@@ -162,6 +174,8 @@ section {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 3rem;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
 }
 
 .banner .content {
@@ -184,7 +198,7 @@ section {
 
 .banner .content p {
   padding: 1rem 0;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   color: #666;
   line-height: 2;
   padding: 1rem 0;
@@ -200,14 +214,47 @@ section {
   width: 100%;
 }
 
+/* PRODUCTS */
+.products .slide {
+  text-align: center;
+}
+
+.products .slide img {
+  height: 25rem;
+  margin: 5rem 0;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+}
+
+.products .slide h3 {
+  padding: 1rem 0;
+  font-size: 2.5rem;
+  color: #444;
+  text-transform: capitalize;
+  opacity: 0;
+}
+
+.products .slide .btn {
+  opacity: 0;
+}
+
+.products .swiper-slide-active img {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.products .swiper-slide-active h3, .products .swiper-slide-active .btn {
+  opacity: 1;
+}
+
 /* MEDIA QUERIES */
 @media (max-width: 1200px) {
   body.active {
     padding-left: 0;
   }
   header.active {
-    -webkit-box-shadow: 0 0 0 100vh rgba(0, 0, 0, 0.8);
-            box-shadow: 0 0 0 100vh rgba(0, 0, 0, 0.8);
+    -webkit-box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.8);
   }
 }
 
@@ -226,6 +273,9 @@ section {
   html {
     font-size: 50%;
     /* 1rem = 8px */
+  }
+  .banner .content h3 {
+    font-size: 3rem;
   }
 }
 /*# sourceMappingURL=style.css.map */

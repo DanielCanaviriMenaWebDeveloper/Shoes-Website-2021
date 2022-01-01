@@ -5,7 +5,7 @@ menu.onclick = () => {
     menu.classList.toggle('fa-times');
     header.classList.toggle('active');
     document.body.classList.toggle('active');
-}
+};
 
 window.onscroll = () => {
     if(window.innerWidth < 1200) {
@@ -13,4 +13,23 @@ window.onscroll = () => {
         header.classList.remove('active');
         document.body.classList.remove('active');
     }
-}
+};
+
+/* SWIPER.JS */
+var swiper = new Swiper(".products-slider", {
+    loop: true,
+    spaceBetween: 20, 
+    grabCursor: true,
+    centeredSlides: true,
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+        },
+        768: {
+            slidesPerView: 2,
+        },
+        991: {
+            slidesPerView: 3,
+        },
+    },    
+});
