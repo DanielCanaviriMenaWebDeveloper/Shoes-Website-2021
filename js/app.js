@@ -15,6 +15,37 @@ window.onscroll = () => {
     }
 };
 
+/* PRODUCT PREVIEW MODAL */
+let productPreviewContainer = document.querySelector('.products-preview-container');
+
+let productPreview = document.querySelectorAll('.products-preview-container .product-preview');
+
+document.querySelectorAll(".products .swiper .swiper-wrapper .slide .btn").forEach(detailBtn => {
+    detailBtn.onclick = () => {
+        productPreviewContainer.style.display = 'block';
+        let name = detailBtn.getAttribute('data-product');
+        console.log(name);
+        productPreview.forEach(preview => {
+            let target = preview.getAttribute('data-target');
+            if(name == target) {
+                preview.style.display = 'flex';
+            }
+        });
+    }
+});
+
+document.querySelectorAll('.products-preview-container .product-preview .fa-times').forEach(close => {
+    close.onclick = () => {
+        productPreviewContainer.style.display = 'none';
+        productPreview.forEach(closePreview => {
+            closePreview.style.display = 'none';
+        });
+    };
+});
+
+console.log(productPreviewContainer, productPreview);
+/* document.querySelectorAll(.produc) */
+
 /* SWIPER.JS */
 var swiper = new Swiper(".products-slider", {
     loop: true,
@@ -32,4 +63,22 @@ var swiper = new Swiper(".products-slider", {
             slidesPerView: 3,
         },
     },    
+});
+
+var swiper = new Swiper(".reviews-slider", {
+	loop: true,
+	spaceBetween: 20,
+	grabCursor: true,
+	centeredSlides: true,
+	breakpoints: {
+		0: {
+			slidesPerView: 1,
+		},
+		768: {
+			slidesPerView: 2,
+		},
+		991: {
+			slidesPerView: 3,
+		},
+	},
 });
