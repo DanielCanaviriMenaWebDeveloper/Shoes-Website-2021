@@ -6,7 +6,7 @@
 <img src="images/imagen.png">
 
 <p>Desktop View 2</p>
-<img src="images/imagen-imagen-2.png">
+<img src="images/imagen-2.png">
 
 <!-- <p>Tablets</p>
 <img src="images/imagen2.png">
